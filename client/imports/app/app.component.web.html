@@ -1,13 +1,35 @@
-<md-toolbar color="primary">
-  <a routerLink="/" class="toolbar-title">Socially2</a>
-  <span class="fill-remaining-space"></span>
-  <div [hidden]="user">
-    <a md-button [routerLink]="['/login']" >Login</a>
-    <a md-button [routerLink]="['/signup']">Sign up</a>
-  </div>
-  <div [hidden]="!user">
-    <span>{{ user | displayName }}</span>
-    <button md-button (click)="logout()">Logout</button>
-  </div>
-</md-toolbar>
-<router-outlet></router-outlet>
+<md-sidenav-container fullscreen>
+
+  <md-sidenav #start>
+    <md-nav-list>
+      <a md-list-item (click)="start.close()" routerLink="/">
+        <md-icon>home</md-icon> Home
+      </a>
+      <a *ngFor="let navItem of navItems" md-list-item (click)="start.close()" [routerLink]="[navItem.route]">
+        {{navItem.name}}
+      </a>
+      <md-list-item>Journal</md-list-item>
+      <md-list-item>Manager</md-list-item>
+      <md-list-item>Long Long Long Long Item</md-list-item>
+    </md-nav-list>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="start.open()">
+      <md-icon>menu</md-icon>
+    </button>
+    <a class="toolbar-title" (click)="start.toggle()">colegend</a>
+    <span class="fill-remaining-space"></span>
+    <div [hidden]="user">
+      <a md-button [routerLink]="['/login']">Login</a>
+      <a md-button [routerLink]="['/signup']">Join</a>
+    </div>
+    <div [hidden]="!user">
+      <span>{{ user | displayName }}</span>
+      <button md-button (click)="logout()">Logout</button>
+    </div>
+  </md-toolbar>
+
+  <router-outlet></router-outlet>
+
+</md-sidenav-container>
