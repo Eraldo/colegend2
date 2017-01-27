@@ -1,6 +1,7 @@
 import { Route } from '@angular/router';
 import { Meteor } from 'meteor/meteor';
 
+import { HomeComponent } from './home/home.component';
 import { PartiesListComponent } from './parties/parties-list.component';
 import { PartyDetailsComponent } from './parties/party-details.component';
 import {SignupComponent} from "./auth/signup.component";
@@ -8,7 +9,9 @@ import {RecoverComponent} from "./auth/recover.component";
 import {LoginComponent} from "./auth/login.component.web";
 
 export const routes: Route[] = [
-  { path: '', component: PartiesListComponent },
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'parties', component: PartiesListComponent },
   { path: 'party/:partyId', component: PartyDetailsComponent, canActivate: ['canActivateForLoggedIn'] },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },

@@ -2,15 +2,10 @@
 
   <md-sidenav #start>
     <md-nav-list>
-      <a md-list-item (click)="start.close()" routerLink="/">
-        <md-icon>home</md-icon> Home
-      </a>
-      <a *ngFor="let navItem of navItems" md-list-item (click)="start.close()" [routerLink]="[navItem.route]">
+      <a *ngFor="let navItem of navItems" md-list-item (click)="start.close()" [routerLink]="[navItem.route]" [routerLinkActive]="['active']">
         {{navItem.name}}
       </a>
-      <md-list-item>Journal</md-list-item>
-      <md-list-item>Manager</md-list-item>
-      <md-list-item>Long Long Long Long Item</md-list-item>
+      <a md-list-item routerLink="secret">Corinna</a>
     </md-nav-list>
   </md-sidenav>
 
