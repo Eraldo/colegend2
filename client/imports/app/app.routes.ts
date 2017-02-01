@@ -15,14 +15,14 @@ import {RecoverComponent} from "./auth/recover.component";
 import {LoginComponent} from "./auth/login.component.web";
 
 export const routes: Route[] = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'journey', component: JourneyComponent },
+  { path: '', component: HomeComponent, data: { meta: { title: 'home' } } },
+  { path: 'home', component: HomeComponent, data: { meta: { title: 'home' } } },
+  { path: 'journey', component: JourneyComponent, data: { meta: { title: 'journey' } } },
   { path: 'vision', component: VisionComponent },
   { path: 'journal', component: JournalComponent },
   { path: 'manager', component: ManagerComponent },
   { path: 'community', component: CommunityComponent },
-  { path: 'settings', component: SettingsComponent },
+  { path: 'settings', component: SettingsComponent, data: { meta: { title: 'settings' } } },
   { path: 'parties', component: PartiesListComponent },
   { path: 'party/:partyId', component: PartyDetailsComponent, canActivate: ['canActivateForLoggedIn'] },
   { path: 'login', component: LoginComponent },

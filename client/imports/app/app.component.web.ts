@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import style from './app.component.scss';
 import template from './app.component.web.html';
 import { InjectUser } from "angular2-meteor-accounts-ui";
+import { MetaService } from 'ng2-meta';
 
 @Component({
   selector: 'app',
@@ -23,8 +24,7 @@ export class AppComponent {
     { name: 'Parties', route: 'parties' },
   ];
 
-  constructor() {
-
+  constructor(private metaService: MetaService) {
   }
 
   logout() {

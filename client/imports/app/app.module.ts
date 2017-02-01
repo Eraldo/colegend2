@@ -24,6 +24,7 @@ import { MOBILE_DECLARATIONS } from "./mobile/index";
 import { AppMobileComponent } from "./mobile/app.component.mobile";
 import { IonicModule, IonicApp } from "ionic-angular";
 import { PartiesListMobileComponent } from "./mobile/parties-list.component.mobile";
+import { MetaModule, MetaConfig } from 'ng2-meta';
 
 let moduleDefinition;
 
@@ -48,6 +49,17 @@ if (Meteor.isCordova) {
   }
 }
 else {
+  const metaConfig: MetaConfig = {
+    //Append a title suffix such as a site name to all titles
+    //Defaults to false
+    useTitleSuffix: true,
+    defaults: {
+      title: 'colegend',
+      titleSuffix: ' | colegend',
+      // 'og:image': 'http://example.com/default-image.png',
+    }
+  };
+
   moduleDefinition = {
     imports: [
       BrowserModule,
@@ -60,6 +72,7 @@ else {
         apiKey: 'AIzaSyAWoBdZHCNh5R-hB5S5ZZ2oeoYyfdDgniA'
       }),
       MaterialModule.forRoot(),
+      MetaModule.forRoot(metaConfig),
       FileDropModule
     ],
     declarations: [
