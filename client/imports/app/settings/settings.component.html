@@ -1,0 +1,12 @@
+<md-card>
+  <h1>Settings</h1>
+  <form *ngIf="user" [formGroup]="settingsForm" (ngSubmit)="updateSettings()">
+    <div class="form-inputs">
+      <md-input dividerColor="accent" formControlName="username" placeholder="Username"></md-input>
+      <button color="accent" md-raised-button type="submit">update</button>
+    </div>
+  </form>
+  <div *ngIf="!user">
+    Please login in order to view your settings!
+  </div>
+</md-card>

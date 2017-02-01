@@ -2,6 +2,12 @@ import { Route } from '@angular/router';
 import { Meteor } from 'meteor/meteor';
 
 import { HomeComponent } from './home/home.component';
+import { JourneyComponent } from './journey/journey.component';
+import { VisionComponent } from './vision/vision.component';
+import { JournalComponent } from './journal/journal.component';
+import { ManagerComponent } from './manager/manager.component';
+import { CommunityComponent } from './community/community.component';
+import { SettingsComponent } from './settings/settings.component';
 import { PartiesListComponent } from './parties/parties-list.component';
 import { PartyDetailsComponent } from './parties/party-details.component';
 import {SignupComponent} from "./auth/signup.component";
@@ -11,6 +17,12 @@ import {LoginComponent} from "./auth/login.component.web";
 export const routes: Route[] = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'journey', component: JourneyComponent },
+  { path: 'vision', component: VisionComponent },
+  { path: 'journal', component: JournalComponent },
+  { path: 'manager', component: ManagerComponent },
+  { path: 'community', component: CommunityComponent },
+  { path: 'settings', component: SettingsComponent },
   { path: 'parties', component: PartiesListComponent },
   { path: 'party/:partyId', component: PartyDetailsComponent, canActivate: ['canActivateForLoggedIn'] },
   { path: 'login', component: LoginComponent },

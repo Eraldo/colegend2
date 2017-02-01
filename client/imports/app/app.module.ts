@@ -9,7 +9,13 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { AppComponent } from "./app.component.web";
 import { routes, ROUTES_PROVIDERS } from './app.routes';
 import { HOME_DECLARATIONS } from './home';
+import { JOURNEY_DECLARATIONS } from './journey';
+import { VISION_DECLARATIONS } from './vision';
+import { JOURNAL_DECLARATIONS } from './journal';
+import { MANAGER_DECLARATIONS } from './manager';
+import { COMMUNITY_DECLARATIONS } from './community';
 import { PARTIES_DECLARATIONS } from './parties';
+import { SETTINGS_DECLARATIONS } from './settings';
 import { SHARED_DECLARATIONS } from './shared';
 import { MaterialModule } from "@angular/material";
 import { AUTH_DECLARATIONS } from "./auth/index";
@@ -59,6 +65,12 @@ else {
     declarations: [
       AppComponent,
       ...HOME_DECLARATIONS,
+      ...JOURNEY_DECLARATIONS,
+      ...VISION_DECLARATIONS,
+      ...JOURNAL_DECLARATIONS,
+      ...MANAGER_DECLARATIONS,
+      ...COMMUNITY_DECLARATIONS,
+      ...SETTINGS_DECLARATIONS,
       ...PARTIES_DECLARATIONS,
       ...SHARED_DECLARATIONS,
       ...AUTH_DECLARATIONS
