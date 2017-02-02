@@ -38,7 +38,7 @@ export class SettingsComponent implements OnInit {
       return;
     }
 
-    if (this.settingsForm.valid) {
+    if (this.settingsForm.dirty && this.settingsForm.valid) {
       Meteor.call('updateUsername', this.settingsForm.value.username);
     }
   }
