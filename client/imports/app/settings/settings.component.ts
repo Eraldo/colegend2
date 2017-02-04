@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { InjectUser } from "angular2-meteor-accounts-ui";
+import {Component} from '@angular/core';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {InjectUser} from "angular2-meteor-accounts-ui";
 
 import template from './settings.component.html';
 import style from './settings.component.scss';
@@ -8,21 +8,20 @@ import style from './settings.component.scss';
 @Component({
   selector: 'settings',
   template,
-  styles: [ style ]
+  styles: [style]
 })
 @InjectUser("user")
-export class SettingsComponent implements OnInit {
+export class SettingsComponent {
   settingsForm: FormGroup;
 
-  constructor(
-    private formBuilder: FormBuilder
-  ) {}
+  constructor(private formBuilder: FormBuilder) {
+    this.createForm();
+  }
 
-
-  ngOnInit() {
+  createForm() {
     // get the current username
-    let user = Meteor.user()
-    let current_username = ''
+    let user = Meteor.user();
+    let current_username = '';
     if (user && user.username) {
       current_username = user.username
     }
