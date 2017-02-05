@@ -18,6 +18,7 @@ import { PARTIES_DECLARATIONS } from './parties';
 import { SETTINGS_DECLARATIONS } from './settings';
 import { SHARED_DECLARATIONS } from './shared';
 import { MaterialModule } from "@angular/material";
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { AUTH_DECLARATIONS } from "./auth/index";
 import { FileDropModule } from "angular2-file-drop";
 import { MOBILE_DECLARATIONS } from "./mobile/index";
@@ -72,6 +73,7 @@ else {
         apiKey: 'AIzaSyAWoBdZHCNh5R-hB5S5ZZ2oeoYyfdDgniA'
       }),
       MaterialModule.forRoot(),
+      FlexLayoutModule.forRoot(),
       MetaModule.forRoot(metaConfig),
       FileDropModule
     ],
