@@ -86,7 +86,7 @@ else {
       ...SETTINGS_DECLARATIONS,
       ...PARTIES_DECLARATIONS,
       ...SHARED_DECLARATIONS,
-      ...AUTH_DECLARATIONS
+      ...AUTH_DECLARATIONS,
     ],
     providers: [
       ...ROUTES_PROVIDERS

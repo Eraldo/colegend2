@@ -1,3 +1,10 @@
-<md-card>
-  <h1>Vision!</h1>
-</md-card>
+<h1>Vision!</h1>
+<div *ngIf="vision">
+    <p *ngIf="!editing" (click)="editing = true" style="white-space:pre-wrap;">{{vision.content}}</p>
+    <form *ngIf="editing" [formGroup]="visionForm" (ngSubmit)="updateVision()">
+        <md-input-container>
+            <textarea md-input formControlName="content" placeholder="Content"></textarea>
+        </md-input-container>
+        <button md-raised-button color="accent">Save</button>
+    </form>
+</div>
