@@ -26,8 +26,30 @@ import { AppMobileComponent } from "./mobile/app.component.mobile";
 import { IonicModule, IonicApp } from "ionic-angular";
 import { PartiesListMobileComponent } from "./mobile/parties-list.component.mobile";
 import { MetaModule, MetaConfig } from 'ng2-meta';
+import {
+  SimplemdeModule,
+  SIMPLEMDE_CONFIG
+} from 'ng2-simplemde'
 
 let moduleDefinition;
+
+export function simplemdeValue() {
+  return {
+    toolbar: [
+      'bold',
+      'italic',
+      'heading',
+      'quote',
+      'unordered-list',
+      'ordered-list',
+      '|',
+      'image',
+      'link',
+      'preview',
+    ],
+    status: false
+  }
+}
 
 if (Meteor.isCordova) {
   moduleDefinition = {
@@ -75,7 +97,11 @@ else {
       MaterialModule.forRoot(),
       FlexLayoutModule.forRoot(),
       MetaModule.forRoot(metaConfig),
-      FileDropModule
+      FileDropModule,
+      SimplemdeModule.forRoot({
+        provide: SIMPLEMDE_CONFIG,
+        useValue: simplemdeValue()
+      })
     ],
     declarations: [
       AppComponent,
