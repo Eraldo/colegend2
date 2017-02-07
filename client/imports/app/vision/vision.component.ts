@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 import {MeteorObservable} from "meteor-rxjs";
-import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 
 import {Visions} from "../../../../both/collections/visions.collection";
 import {Vision} from "../../../../both/models/vision.model";
@@ -17,11 +16,7 @@ import style from './vision.component.scss';
 export class VisionComponent implements OnInit {
   visionSub: Subscription;
   vision: Vision;
-  visionForm: FormGroup;
   editing: boolean = false;
-
-  constructor(private formBuilder: FormBuilder) {
-  }
 
   ngOnInit() {
     if (this.visionSub) {
@@ -31,14 +26,7 @@ export class VisionComponent implements OnInit {
     this.visionSub = MeteorObservable.subscribe('visions').subscribe(() => {
       MeteorObservable.autorun().subscribe(() => {
         this.vision = Visions.findOne() || {content: '', owner: ''};
-        this.createVisionForm()
       });
-    });
-  }
-
-  createVisionForm() {
-    this.visionForm = this.formBuilder.group({
-      content: [this.vision!.content || '', Validators.required],
     });
   }
 
@@ -47,10 +35,10 @@ export class VisionComponent implements OnInit {
       alert('Please log in to change this vision');
       return;
     }
-    if (this.visionForm.dirty && this.visionForm.valid) {
+    if (this.vision && this.vision.content) {
       Visions.update(this.vision._id, {
         $set: {
-          content: this.visionForm.value.content,
+          content: this.vision.content,
         }
       });
     }

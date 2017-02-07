@@ -26,28 +26,25 @@ import { AppMobileComponent } from "./mobile/app.component.mobile";
 import { IonicModule, IonicApp } from "ionic-angular";
 import { PartiesListMobileComponent } from "./mobile/parties-list.component.mobile";
 import { MetaModule, MetaConfig } from 'ng2-meta';
-import {
-  SimplemdeModule,
-  SIMPLEMDE_CONFIG
-} from 'ng2-simplemde'
+import { SimplemdeModule, SIMPLEMDE_CONFIG } from 'ng2-simplemde'
 
 let moduleDefinition;
 
 export function simplemdeValue() {
   return {
-    toolbar: [
-      'bold',
-      'italic',
-      'heading',
-      'quote',
-      'unordered-list',
-      'ordered-list',
-      '|',
-      'image',
-      'link',
-      'preview',
-    ],
-    status: false
+    // toolbar: [
+    //   'bold',
+    //   'italic',
+    //   'heading',
+    //   'quote',
+    //   'unordered-list',
+    //   'ordered-list',
+    //   '|',
+    //   'image',
+    //   'link',
+    //   'preview'
+    // ],
+    // status: false
   }
 }
 
