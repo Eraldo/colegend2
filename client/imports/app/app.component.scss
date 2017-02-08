@@ -1,15 +1,7 @@
 .toolbar-title {
-  text-decoration: none;
-  color: white;
+  margin-left: 0.5em;
 }
 
 md-toolbar {
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
-}
-
-.app-content {
-  margin: auto;
-  padding: 1em;
-  max-width: 1000px;
-
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }

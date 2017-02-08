@@ -1,7 +1,9 @@
-<h1>Vision!</h1>
-<div *ngIf="vision">
-    <p *ngIf="!editing" (click)="editing=true" style="white-space:pre-wrap;">{{vision.content}}</p>
-    <simplemde *ngIf="editing" [(ngModel)]="vision.content"></simplemde>
-    <button *ngIf="editing" (click)="updateVision()" md-raised-button color="accent">Save</button>
-    <button *ngIf="!editing" (click)="editing=true" md-raised-button>Update</button>
+<div class="content">
+    <h1>Vision!</h1>
+    <div *ngIf="vision">
+        <p *ngIf="!editing" (click)="editing=true" style="white-space:pre-wrap;">{{vision.content}}</p>
+        <simplemde *ngIf="editing" [(ngModel)]="vision.content"></simplemde>
+        <button *ngIf="editing" (click)="updateVision()" md-raised-button color="accent">Save</button>
+        <button *ngIf="!editing" (click)="editing=true" md-raised-button>Update</button>
+    </div>
 </div>
