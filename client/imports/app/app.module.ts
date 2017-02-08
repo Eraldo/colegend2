@@ -27,6 +27,7 @@ import { IonicModule, IonicApp } from "ionic-angular";
 import { PartiesListMobileComponent } from "./mobile/parties-list.component.mobile";
 import { MetaModule, MetaConfig } from 'ng2-meta';
 import { SimplemdeModule, SIMPLEMDE_CONFIG } from 'ng2-simplemde'
+import { MarkdownModule } from 'angular2-markdown';
 
 let moduleDefinition;
 
@@ -83,6 +84,7 @@ else {
   moduleDefinition = {
     imports: [
       BrowserModule,
+      MarkdownModule.forRoot(),
       FormsModule,
       ReactiveFormsModule,
       RouterModule.forRoot(routes),
