@@ -14,7 +14,7 @@ import { MetaService } from 'ng2-meta';
 @InjectUser('user')
 export class AppComponent {
   navItems = [
-    { name: 'Home', route: 'home' },
+    { name: 'Home', route: 'home', icon: 'home' },
     { name: 'Journey', route: 'journey' },
     { name: 'Vision', route: 'vision' },
     { name: 'Journal', route: 'journal' },

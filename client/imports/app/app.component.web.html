@@ -3,8 +3,11 @@
   <md-sidenav #start>
     <md-nav-list>
       <a *ngFor="let navItem of navItems" md-list-item (click)="start.close()" [routerLink]="[navItem.route]" [routerLinkActive]="['active']">
+        <md-icon *ngIf="navItem.icon">{{navItem.icon}}</md-icon>
         {{navItem.name}}
       </a>
+        <hr>
+        <a md-list-item href="mailto:connect@colegend.org?subject=colegend feedback" target="_blank"><md-icon>feedback</md-icon> Feedback</a>
     </md-nav-list>
   </md-sidenav>
 

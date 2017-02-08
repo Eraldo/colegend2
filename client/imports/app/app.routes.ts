@@ -15,7 +15,7 @@ import {RecoverComponent} from "./auth/recover.component";
 import {LoginComponent} from "./auth/login.component.web";
 
 export const routes: Route[] = [
-  { path: '', component: HomeComponent, data: { meta: { title: 'home' } } },
+  { path: '', component: HomeComponent, data: { meta: { title: 'home', icon: 'home' } } },
   { path: 'home', component: HomeComponent, data: { meta: { title: 'home' } } },
   { path: 'journey', component: JourneyComponent, data: { meta: { title: 'journey' } } },
   { path: 'vision', component: VisionComponent },
